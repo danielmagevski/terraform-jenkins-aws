@@ -1,11 +1,5 @@
 pipeline {
-    agent {
-        docker {
-            image 'hashicorp/terraform:latest'
-            args  '--entrypoint="" -u root -v /opt/jenkins/.aws:/root/.aws'
-        }
-    }
-
+    agent  any {
     stages {
 
         stage("Checkout source") {
